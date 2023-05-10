@@ -13,7 +13,7 @@ public class OAuthTest {
 				.queryParams("response_type","code")
 				.queryParams("redirect_uri","https://rahulshettyacademy.com/getCourse.php")
 			.when()
-				.post("https://accounts.google.com/o/oauth2/v2/auth").asString();
+				.get("https://accounts.google.com/o/oauth2/v2/auth").asString();
 			
 		//Get access_token
 		String responseAccessToken= given().log().all()
