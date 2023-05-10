@@ -15,7 +15,7 @@ public class OAuthTest {
 			.when()
 				.post("https://accounts.google.com/o/oauth2/v2/auth").asString();
 		
-		 responseAuthCode = files.ReusableMethods.getParamValueFromJson(responseAuthCode, "code");
+		files.ReusableMethods.getParamValueFromJson(responseAuthCode, "access_token")
 			
 		//Get access_token
 		String responseAccessToken= given().log().all()
@@ -26,9 +26,6 @@ public class OAuthTest {
 			.queryParams("grant_type","authorization_code")
 		.when()
 			.post("https://www.googleapis.com/oauth2/v4/token").asString();
-		
-		responseAccessToken = files.ReusableMethods.getParamValueFromJson(responseAccessToken, "access_token");
-		
 		//Check query parameters to get response.
 		String responseGet = given().queryParam("access_token", responseAccessToken).log().all()
 							.when()

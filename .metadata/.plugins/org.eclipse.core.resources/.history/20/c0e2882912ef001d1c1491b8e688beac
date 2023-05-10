@@ -27,7 +27,7 @@ public class OAuthTest {
 		.when()
 			.post("https://www.googleapis.com/oauth2/v4/token").asString();
 		
-		responseAccessToken = files.ReusableMethods.getParamValueFromJson(responseAccessToken, "access_token");
+		responseAccessToken = files.ReusableMethods.getParamValueFromJson(responseAccessToken, "auth_token");
 		
 		//Check query parameters to get response.
 		String responseGet = given().queryParam("access_token", responseAccessToken).log().all()
