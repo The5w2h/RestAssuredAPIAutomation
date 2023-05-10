@@ -1,0 +1,14 @@
+package stepDefinition;
+
+import io.cucumber.java.en.Given;
+
+public class stepDefinition {
+	
+	// how to map? .feature to stepDefintion?
+	@Given("^User is on Netbanking login page$")
+	public void User_is_on_Netbanking_login_page()
+	{
+		// code to land the user on Netbanking page
+	}
+
+}

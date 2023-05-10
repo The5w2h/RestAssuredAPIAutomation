@@ -1,0 +1,29 @@
+package files;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
+
+public class DynamicJson {
+	
+	@Test
+	public void addBook()
+	{
+		RestAssured.baseURI = "http://216.10.245.166";
+		
+		String responseString = given().log().all()
+			.header("Content-Type","application/json")
+			.body(Payload.AddBook())
+		.when()
+			.post("/Library/Addbook.php")
+		.then().log().all()
+			.assertThat()
+				.statusCode(200)
+		.extract().response().toString();
+		System.out.println(responseString);
+		String actualId = ReusableMethods.getParamValueFromJson(responseString, "ID");
+	}
+
+}

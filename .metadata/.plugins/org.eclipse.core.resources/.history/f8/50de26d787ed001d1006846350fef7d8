@@ -1,0 +1,7 @@
+# API Testing
+
+## Important Classes and Methods
+* SessionFilter: Used to store session cookie.
+*Usage*: 
+1. SessionFilter session = new SesssionFilter();
+2. given().header().body().**filter(session)**.when().post().then().extract().response().asString();

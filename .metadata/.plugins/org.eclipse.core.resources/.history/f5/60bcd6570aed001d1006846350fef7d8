@@ -1,0 +1,25 @@
+package files;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
+
+public class DynamicJson {
+	
+	@Test
+	public void addBook()
+	{
+		RestAssured.baseURI = "http://216.10.245.166";
+		
+		given().log().all()
+			.header("Content-Type","application/json")
+			.body(Payload.AddBook())
+		.when()
+			.post("Library/Addbook.php")
+		.then().log().all()
+			.assertThat()
+				.body("Msg", org.hamcrest.Matchers.equalTo("successfully added"));
+	}
+
+}

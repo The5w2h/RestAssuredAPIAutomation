@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+/**
+ * @author tanujsrivastava
+ *
+ */
+module DemoProject {
+	requires rest.assured;
+}

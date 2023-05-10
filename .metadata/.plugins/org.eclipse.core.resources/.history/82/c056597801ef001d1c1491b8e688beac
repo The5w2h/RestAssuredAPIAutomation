@@ -1,0 +1,14 @@
+import static io.restassured.RestAssured.*;
+
+public class OAuthTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//1. Check query parameters
+		given().queryParam("access_token", "")
+		.when()
+			.get("https://rahulshettyacademy.com/getCourse.php").asString();
+	}
+
+}
