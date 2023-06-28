@@ -11,3 +11,13 @@ given().header().body().filter(session).when().post().then().extract().response(
 * mvn archetype:generate -DgroupId=tsclickacademy -DartifactId=Mavenjava -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 * mvn eclipse:eclipse
 * For attachments use: multiPart("file", new File("jira.txt")). When multiPart is used then use header("Context-Type","multipart/form-data")
+
+## OAuth
+* grant_type
+* redirect_url
+* auth_server_url
+* access_token_url
+* client_id
+* client_secret
+* scope
+* state
